@@ -37,5 +37,5 @@
 # Form handling
 [[redirects]]
   from = "/thank-you"
-  to = "/?success=true"
+  to = "/success.html"
   status = 200
