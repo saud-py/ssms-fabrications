@@ -1,0 +1,64 @@
+/* Custom Styles for SS & MS Fabrication Website */
+
+/* Base Styles */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.roboto-condensed {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* Swiper Customizations */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 24px;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #2563eb;
+}
+
+/* Image Optimization */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.swiper-slide {
+    position: relative;
+}
+
+/* Logo Fallback Styles */
+.logo-fallback {
+    display: none;
+}
+
+.logo-error .logo-fallback {
+    display: inline;
+}
+
+.logo-error img {
+    display: none;
+}
+
+/* Loading Animation */
+.loading {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}

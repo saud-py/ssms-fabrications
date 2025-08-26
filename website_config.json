@@ -1,0 +1,73 @@
+{
+  "company": {
+    "name": "SS & MS FABRICATION",
+    "tagline": "Crafting Excellence in Steel Since 2010",
+    "experience_years": "decade"
+  },
+  "contact": {
+    "address": "123 Fabrication Street, Industrial Area, City, State 12345",
+    "phone": "+91 98765 43210",
+    "email": "contact@ssmsfab.com",
+    "business_hours": "Monday - Saturday: 9:00 AM - 6:00 PM"
+  },
+  "hero": {
+    "title": "Precision in Steel Fabrication",
+    "subtitle": "Delivering high-quality Stainless Steel (SS) and Mild Steel (MS) solutions for all your construction and design needs."
+  },
+  "about": {
+    "main_description": "With over a decade of experience in the metal fabrication industry, we pride ourselves on delivering exceptional craftsmanship and durable products. Our team of skilled professionals is dedicated to turning your vision into reality.",
+    "secondary_description": "We use only the highest quality materials and state-of-the-art equipment to ensure every project meets our rigorous standards of quality, safety, and precision."
+  },
+  "services": {
+    "gates": {
+      "title": "Custom Gates & Grills",
+      "description": "Designer SS and MS gates, window grills, and safety doors for homes and businesses."
+    },
+    "railings": {
+      "title": "Staircase & Railings", 
+      "description": "Elegant and sturdy staircase railings, balcony railings, and handrails in various designs."
+    },
+    "structural": {
+      "title": "Structural Fabrication",
+      "description": "MS structures for sheds, warehouses, and other industrial and commercial applications."
+    },
+    "custom": {
+      "title": "Bespoke Projects",
+      "description": "Custom fabrication work based on your specific designs and requirements."
+    }
+  },
+  "gallery": {
+    "projects": [
+      {
+        "image": "project-1.jpg",
+        "title": "Custom Gate Project",
+        "alt": "Custom Gate Project"
+      },
+      {
+        "image": "project-2.jpg", 
+        "title": "Staircase Railing",
+        "alt": "Staircase Railing"
+      },
+      {
+        "image": "project-3.jpg",
+        "title": "Industrial Structure", 
+        "alt": "Industrial Structure"
+      },
+      {
+        "image": "project-4.jpg",
+        "title": "Window Grills",
+        "alt": "Window Grills"
+      },
+      {
+        "image": "project-5.jpg",
+        "title": "Balcony Railing",
+        "alt": "Balcony Railing"
+      },
+      {
+        "image": "project-6.jpg",
+        "title": "Custom Fabrication",
+        "alt": "Custom Fabrication"
+      }
+    ]
+  }
+}

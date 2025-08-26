@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SS and MS Fabrication Works - Quality Steel Fabrication</title>
+    <meta name="description"
+        content="Expert SS and MS fabrication services for residential and commercial projects. We specialize in custom gates, railings, structures, and more.">
+    <meta name="keywords"
+        content="SS fabrication, MS fabrication, steel works, metal fabrication, welding, custom gates, steel railings">
+
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto+Condensed:wght@700&display=swap"
+        as="style">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Swiper.js for Carousel -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto+Condensed:wght@700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .roboto-condensed {
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #ffffff;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+        }
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 24px;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: #2563eb;
+        }
+
+        /* Optimize images */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .swiper-slide {
+            position: relative;
+        }
+
+        /* Logo fallback */
+        .logo-fallback {
+            display: none;
+        }
+
+        .logo-error .logo-fallback {
+            display: inline;
+        }
+
+        .logo-error img {
+            display: none;
+        }
+
+        /* Loading animation */
+        .loading {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .loaded {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-3">
+                <img src="images/logo.png" alt="SS & MS Fabrication Logo" class="h-12 w-auto">
+                <span class="text-2xl font-bold text-gray-900 roboto-condensed">SS & MS FABRICATION</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-600 hover:text-blue-600 transition duration-300">Home</a>
+                <a href="#about" class="text-gray-600 hover:text-blue-600 transition duration-300">About Us</a>
+                <a href="#services" class="text-gray-600 hover:text-blue-600 transition duration-300">Services</a>
+                <a href="#gallery" class="text-gray-600 hover:text-blue-600 transition duration-300">Gallery</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600 transition duration-300">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-gray-800 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#home" class="block px-6 py-3 text-sm hover:bg-gray-200">Home</a>
+            <a href="#about" class="block px-6 py-3 text-sm hover:bg-gray-200">About Us</a>
+            <a href="#services" class="block px-6 py-3 text-sm hover:bg-gray-200">Services</a>
+            <a href="#gallery" class="block px-6 py-3 text-sm hover:bg-gray-200">Gallery</a>
+            <a href="#contact" class="block px-6 py-3 text-sm hover:bg-gray-200">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="relative bg-cover bg-center h-screen flex items-center"
+            style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero-bg.jpg');">
+            <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+            <div class="container mx-auto px-6 text-center text-white relative z-10">
+                <h1 class="text-4xl md:text-6xl font-bold roboto-condensed tracking-wider uppercase mb-4 loading">
+                    Precision in Steel Fabrication
+                </h1>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8 loading">
+                    Delivering high-quality Stainless Steel (SS) and Mild Steel (MS) solutions for all your construction
+                    and design needs.
+                </p>
+                <a href="#contact"
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 text-lg inline-block loading">
+                    Get a Free Quote
+                </a>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="loading">
+                        <img src="images/workshop.jpg" alt="Our Fabrication Workshop"
+                            class="rounded-lg shadow-xl w-full h-80 object-cover">
+                    </div>
+                    <div class="loading">
+                        <h2 class="text-3xl font-bold text-gray-900 roboto-condensed mb-4">About SS & MS Fabrication
+                            Works</h2>
+                        <p class="text-gray-600 mb-4">
+                            With over a decade of experience in the metal fabrication industry, we pride ourselves on
+                            delivering exceptional craftsmanship and durable products. Our team of skilled professionals
+                            is dedicated to turning your vision into reality.
+                        </p>
+                        <p class="text-gray-600 mb-6">
+                            We use only the highest quality materials and state-of-the-art equipment to ensure every
+                            project meets our rigorous standards of quality, safety, and precision.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-600 mr-3" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                Experienced & Skilled Team
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-600 mr-3" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                Commitment to Quality
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-600 mr-3" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                On-Time Project Delivery
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Services Section -->
+        <section id="services" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-gray-900 roboto-condensed mb-4 loading">Our Services</h2>
+                <p class="max-w-3xl mx-auto text-gray-600 mb-12 loading">
+                    We offer a comprehensive range of fabrication services tailored to meet the needs of our clients.
+                </p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Service Card 1 -->
+                    <div
+                        class="bg-white p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition duration-300 loading">
+                        <div class="text-blue-600 mb-4">
+                            <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Custom Gates & Grills</h3>
+                        <p class="text-gray-600">Designer SS and MS gates, window grills, and safety doors for homes and
+                            businesses.</p>
+                    </div>
+
+                    <!-- Service Card 2 -->
+                    <div
+                        class="bg-white p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition duration-300 loading">
+                        <div class="text-blue-600 mb-4">
+                            <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Staircase & Railings</h3>
+                        <p class="text-gray-600">Elegant and sturdy staircase railings, balcony railings, and handrails
+                            in various designs.</p>
+                    </div>
+
+                    <!-- Service Card 3 -->
+                    <div
+                        class="bg-white p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition duration-300 loading">
+                        <div class="text-blue-600 mb-4">
+                            <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Structural Fabrication</h3>
+                        <p class="text-gray-600">MS structures for sheds, warehouses, and other industrial and
+                            commercial applications.</p>
+                    </div>
+
+                    <!-- Service Card 4 -->
+                    <div
+                        class="bg-white p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition duration-300 loading">
+                        <div class="text-blue-600 mb-4">
+                            <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Bespoke Projects</h3>
+                        <p class="text-gray-600">Custom fabrication work based on your specific designs and
+                            requirements.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-900 roboto-condensed mb-12 loading">Our Work</h2>
+
+                <!-- Swiper Carousel -->
+                <div class="swiper mySwiper relative loading">
+                    <div class="swiper-wrapper">
+                        <!-- Project Images -->
+                        <div class="swiper-slide">
+                            <img src="images/project-1.jpg" alt="Custom Gate Project"
+                                class="w-full h-96 object-cover rounded-lg">
+                            <div class="absolute bottom-4 left-4 bg-black bg-opacity-70 text-white px-4 py-2 rounded">
+                                <h4 class="font-semibold">Custom Gate Project</h4>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/project-2.jpg" alt="Staircase Railing"
+                                class="w-full h-96 object-cover rounded-lg">
+                            <div class="absolute bottom-4 left-4 bg-black bg-opacity-70 text-white px-4 py-2 rounded">
+                                <h4 class="font-semibold">Staircase Railing</h4>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/project-3.jpg" alt="Industrial Structure"
+                                class="w-full h-96 object-cover rounded-lg">
+                            <div class="absolute bottom-4 left-4 bg-black bg-opacity-70 text-white px-4 py-2 rounded">
+                                <h4 class="font-semibold">Industrial Structure</h4>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/project-4.jpg" alt="Window Grills"
+                                class="w-full h-96 object-cover rounded-lg">
+                            <div class="absolute bottom-4 left-4 bg-black bg-opacity-70 text-white px-4 py-2 rounded">
+                                <h4 class="font-semibold">Window Grills</h4>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/project-5.jpg" alt="Balcony Railing"
+                                class="w-full h-96 object-cover rounded-lg">
+                            <div class="absolute bottom-4 left-4 bg-black bg-opacity-70 text-white px-4 py-2 rounded">
+                                <h4 class="font-semibold">Balcony Railing</h4>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/project-6.jpg" alt="Custom Fabrication"
+                                class="w-full h-96 object-cover rounded-lg">
+                            <div class="absolute bottom-4 left-4 bg-black bg-opacity-70 text-white px-4 py-2 rounded">
+                                <h4 class="font-semibold">Custom Fabrication</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Navigation -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-900 roboto-condensed mb-12 loading">Contact Us</h2>
+                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 bg-white p-8 rounded-lg shadow-lg loading">
+                    <!-- Contact Form -->
+                    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                        <input type="hidden" name="form-name" value="contact" />
+                        <p class="hidden">
+                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                        </p>
+                        <h3 class="text-2xl font-bold mb-6">Send us a Message</h3>
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 font-semibold mb-2">Your Name</label>
+                            <input type="text" id="name" name="name"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 font-semibold mb-2">Your Email</label>
+                            <input type="email" id="email" name="email"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="phone" class="block text-gray-700 font-semibold mb-2">Phone Number</label>
+                            <input type="tel" id="phone" name="phone"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                            Submit
+                        </button>
+                    </form>
+
+                    <!-- Contact Info -->
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                        <p class="text-gray-600 mb-6">We're ready to discuss your next project. Reach out to us through
+                            any of the following methods.</p>
+                        <div class="space-y-4">
+                            <p class="flex items-center">
+                                <svg class="w-6 h-6 text-blue-600 mr-4" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                    </path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                                <span>123 Fabrication Street, Industrial Area, City, State 12345</span>
+                            </p>
+                            <p class="flex items-center">
+                                <svg class="w-6 h-6 text-blue-600 mr-4" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                    </path>
+                                </svg>
+                                <span>+91 98765 43210</span>
+                            </p>
+                            <p class="flex items-center">
+                                <svg class="w-6 h-6 text-blue-600 mr-4" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                                <span>contact@ssmsfab.com</span>
+                            </p>
+                            <div class="mt-6">
+                                <h4 class="font-semibold mb-2">Business Hours:</h4>
+                                <p class="text-gray-600">Monday - Saturday: 9:00 AM - 6:00 PM</p>
+                                <p class="text-gray-600">Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 SS and MS Fabrication Works. All Rights Reserved.</p>
+            <p class="mt-2 text-gray-400">Crafting Excellence in Steel Since 2010</p>
+        </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
+        for (let link of mobileMenuLinks) {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initialize Swiper
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('loaded');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with loading class
+        document.querySelectorAll('.loading').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Form submission handling
+        document.querySelector('form[name="contact"]').addEventListener('submit', function (e) {
+            const submitButton = this.querySelector('button[type="submit"]');
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+        });
+
+        // Handle logo loading error
+        document.querySelector('nav img').addEventListener('error', function () {
+            this.parentElement.classList.add('logo-error');
+        });
+
+        // Handle image loading errors in gallery
+        document.querySelectorAll('.swiper-slide img').forEach(img => {
+            img.addEventListener('error', function () {
+                this.style.display = 'none';
+                const placeholder = document.createElement('div');
+                placeholder.className = 'w-full h-96 bg-gray-300 rounded-lg flex items-center justify-center';
+                placeholder.innerHTML = `<span class="text-gray-600 text-lg">${this.alt}</span>`;
+                this.parentElement.appendChild(placeholder);
+            });
+        });
+
+        // Handle workshop image error
+        const workshopImg = document.querySelector('img[alt="Our Fabrication Workshop"]');
+        if (workshopImg) {
+            workshopImg.addEventListener('error', function () {
+                const placeholder = document.createElement('div');
+                placeholder.className = 'bg-gray-300 rounded-lg shadow-xl w-full h-80 flex items-center justify-center';
+                placeholder.innerHTML = '<span class="text-gray-600 text-lg">Workshop Image</span>';
+                this.parentElement.replaceChild(placeholder, this);
+            });
+        }
+    </script>
+</body>
+
+</html>
