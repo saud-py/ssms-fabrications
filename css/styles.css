@@ -1,4 +1,4 @@
-/* Custom Styles for SS & MS Fabrication Website */
+/* SS & MS Fabrication Website Styles */
 
 /* Base Styles */
 body {
@@ -7,6 +7,10 @@ body {
 
 .roboto-condensed {
     font-family: 'Roboto Condensed', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 /* Swiper Customizations */
@@ -26,6 +30,18 @@ body {
 
 .swiper-pagination-bullet-active {
     background-color: #2563eb;
+}
+
+/* Loading Animations */
+.loading {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.loaded {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Image Optimization */
@@ -51,14 +67,32 @@ img {
     display: none;
 }
 
-/* Loading Animation */
-.loading {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease;
+/* Custom Hover Effects */
+.service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.loaded {
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Form Focus States */
+.form-input:focus {
+    outline: none;
+    ring: 2px;
+    ring-color: #3b82f6;
+    border-color: #3b82f6;
+}
+
+/* Mobile Menu Animation */
+.mobile-menu-enter {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.mobile-menu-enter-active {
     opacity: 1;
     transform: translateY(0);
+    transition: all 0.3s ease;
 }
