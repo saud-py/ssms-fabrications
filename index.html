@@ -17,6 +17,22 @@
         gtag('config', 'AW-957726947');
     </script>
 
+    <!-- Event snippet for Primary Contact Us button conversion tracking -->
+    <script>
+        function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof(url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-957726947/Bx5ZCILxxo0BEOOB18gD',
+                'event_callback': callback
+            });
+            return false;
+        }
+    </script>
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/logo.png">
 
@@ -475,7 +491,7 @@
             <h1 class="roboto-condensed loading">Precision in Steel Fabrication</h1>
             <p class="loading">Delivering high-quality Stainless Steel (SS) and Mild Steel (MS) solutions for all your
                 construction and design needs.</p>
-            <a href="#contact" class="btn loading">Get a Free Quote</a>
+            <a href="#contact" class="btn loading" onclick="gtag_report_conversion('#contact')">Get a Free Quote</a>
         </div>
     </section>
 
@@ -644,7 +660,7 @@
                             <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
 
-                        <button type="submit" class="btn" style="width: 100%;">Submit</button>
+                        <button type="submit" class="btn" style="width: 100%;" onclick="gtag_report_conversion('/success.html')">Submit</button>
                     </form>
                 </div>
 
