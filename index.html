@@ -45,6 +45,20 @@
             });
             return false;
         }
+        
+        // Call button conversion tracking function
+        function gtag_report_call_conversion(url) {
+            var callback = function () {
+                if (typeof(url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-957726947/1N1TCMK-3I0BEOOB18gD',
+                'event_callback': callback
+            });
+            return false;
+        }
     </script>
 
     <!-- Favicon -->
