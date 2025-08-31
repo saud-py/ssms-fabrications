@@ -31,6 +31,20 @@
             });
             return false;
         }
+        
+        // WhatsApp conversion tracking function
+        function gtag_report_whatsapp_conversion(url) {
+            var callback = function () {
+                if (typeof(url) != 'undefined') {
+                    window.open(url, '_blank');
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-957726947/OAxxCMXyxo0BEOOB18gD',
+                'event_callback': callback
+            });
+            return false;
+        }
     </script>
 
     <!-- Favicon -->
@@ -698,6 +712,19 @@
                                 </path>
                             </svg>
                             <span>ssms7entrps@gmail.com</span>
+                        </div>
+
+                        <div class="contact-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #25D366;">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
+                                </path>
+                            </svg>
+                            <a href="https://wa.me/919481347471?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20your%20fabrication%20services" 
+                               onclick="gtag_report_whatsapp_conversion('https://wa.me/919481347471?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20your%20fabrication%20services')" 
+                               style="color: inherit; text-decoration: none;">
+                               WhatsApp: +91 94813 47471
+                            </a>
                         </div>
 
                         <div style="margin-top: 1.5rem;">
