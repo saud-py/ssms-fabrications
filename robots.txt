@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /success.html
+Disallow: /thank-you
+
+Sitemap: https://ssms-fabricatiion-works.netlify.app/sitemap.xml

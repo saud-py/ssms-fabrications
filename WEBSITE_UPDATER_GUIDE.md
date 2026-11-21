@@ -136,7 +136,7 @@ python3 update_website.py
 ```
 Company Name: ABC Steel Works
 Full Address: 456 Industrial Road, Mumbai, Maharashtra 400001
-Phone Number: +91 9481347471
+Phone Number: +91 94813 47471
 Email: info@abcsteel.com
 Main Headline: Expert Steel Fabrication Services
 ```
