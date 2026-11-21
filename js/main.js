@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (mobileMenuBtn && mobileMenu) {
         mobileMenuBtn.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            mobileMenuBtn.setAttribute('aria-expanded', String(!isHidden));
         });
     }
 
@@ -31,34 +32,62 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Initialize Swiper carousel
-    if (typeof Swiper !== 'undefined') {
-        const swiper = new Swiper('.mySwiper', {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            loop: true,
-            autoplay: {
-                delay: 4000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-                640: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 30,
-                }
-            }
+    // Photo lightbox for .work-grid galleries (tap a photo to enlarge, swipe/arrow through)
+    const gridLinks = Array.from(document.querySelectorAll('.work-grid a'));
+    if (gridLinks.length) {
+        const box = document.createElement('div');
+        box.className = 'lightbox';
+        box.hidden = true;
+        box.setAttribute('role', 'dialog');
+        box.setAttribute('aria-modal', 'true');
+        box.innerHTML = '<figure><img alt=""><figcaption></figcaption></figure>' +
+            '<button class="lb-close" aria-label="Close">&times;</button>' +
+            '<button class="lb-prev" aria-label="Previous photo">&lsaquo;</button>' +
+            '<button class="lb-next" aria-label="Next photo">&rsaquo;</button>';
+        document.body.appendChild(box);
+        const img = box.querySelector('img');
+        const cap = box.querySelector('figcaption');
+        let index = 0;
+        let touchX = null;
+
+        const show = function (i) {
+            index = (i + gridLinks.length) % gridLinks.length;
+            const link = gridLinks[index];
+            img.src = link.getAttribute('href');
+            img.alt = link.dataset.caption || '';
+            cap.textContent = link.dataset.caption || '';
+            box.hidden = false;
+            document.body.style.overflow = 'hidden';
+        };
+        const close = function () {
+            box.hidden = true;
+            document.body.style.overflow = '';
+        };
+
+        gridLinks.forEach(function (link, i) {
+            link.addEventListener('click', function (e) {
+                // Home page tiles link to service pages; only enlarge direct image links
+                if (!/\.(webp|jpe?g|png)$/i.test(link.getAttribute('href'))) return;
+                e.preventDefault();
+                show(i);
+            });
+        });
+        box.querySelector('.lb-close').addEventListener('click', close);
+        box.querySelector('.lb-prev').addEventListener('click', function () { show(index - 1); });
+        box.querySelector('.lb-next').addEventListener('click', function () { show(index + 1); });
+        box.addEventListener('click', function (e) { if (e.target === box) close(); });
+        document.addEventListener('keydown', function (e) {
+            if (box.hidden) return;
+            if (e.key === 'Escape') close();
+            if (e.key === 'ArrowLeft') show(index - 1);
+            if (e.key === 'ArrowRight') show(index + 1);
+        });
+        box.addEventListener('touchstart', function (e) { touchX = e.touches[0].clientX; }, { passive: true });
+        box.addEventListener('touchend', function (e) {
+            if (touchX === null) return;
+            const dx = e.changedTouches[0].clientX - touchX;
+            if (Math.abs(dx) > 50) show(index + (dx < 0 ? 1 : -1));
+            touchX = null;
         });
     }
 
@@ -85,12 +114,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.querySelector('form[name="contact"]');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
+            // Lets success.html know this visit came from a real form submission,
+            // so the Google Ads conversion is counted once and only for genuine leads.
+            try { sessionStorage.setItem('ssms_form_submitted', '1'); } catch (err) {}
             const submitButton = this.querySelector('button[type="submit"]');
             if (submitButton) {
                 submitButton.textContent = 'Sending...';
                 submitButton.disabled = true;
             }
         });
+    }
+
+    // Keep the footer year current
+    const yearEl = document.getElementById('year');
+    if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
     }
 
     // Handle logo loading error
@@ -102,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Handle image loading errors in gallery
-    document.querySelectorAll('.swiper-slide img').forEach(img => {
+    document.querySelectorAll('.work-grid img').forEach(img => {
         img.addEventListener('error', function() {
             this.style.display = 'none';
             const placeholder = document.createElement('div');

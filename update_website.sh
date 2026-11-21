@@ -49,7 +49,7 @@ if [ ! -z "$ADDRESS" ]; then
 fi
 
 if [ ! -z "$PHONE" ]; then
-    sed -i.bak "s/+91 9481347471/$PHONE/g" index.html
+    sed -i.bak "s/+91 94813 47471/$PHONE/g" index.html
     echo "✅ Phone number updated"
 fi
 
