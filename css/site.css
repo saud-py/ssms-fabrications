@@ -566,3 +566,4 @@ a.service-card .more { display: inline-block; margin-top: 0.75rem; color: #2563e
 .area-chips { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; max-width: 60rem; margin: 0 auto; }
 .area-chips li { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 999px; padding: 0.35rem 0.9rem; font-size: 0.9rem; color: #374151; }
 @media (min-width: 1024px) { .services-grid { grid-template-columns: repeat(3, 1fr); } }
+.section-head .stars { color: #f59e0b; letter-spacing: 0.1em; }
