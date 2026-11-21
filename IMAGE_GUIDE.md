@@ -1,130 +1,69 @@
-# Image Setup Guide for SS & MS Fabrication Website
+# Image Guide
 
-## Required Images
+How photos are organised on the SS & MS FABRICATION website, and how to add or replace them.
 
-Place all images in the `images/` folder with these exact names:
+## Where the photos are
 
-### 1. Company Logo
-- **File**: `images/logo.png`
-- **Recommended size**: 200x80px (or similar ratio)
-- **Format**: PNG with transparent background preferred
-- **Usage**: Appears in the navigation header
-
-### 2. Hero Background
-- **File**: `images/hero-bg.jpg`
-- **Recommended size**: 1920x1080px
-- **Format**: JPG
-- **Usage**: Background image for the main hero section
-- **Tip**: Choose an image of your workshop, team, or impressive fabrication work
-
-### 3. Workshop Image
-- **File**: `images/workshop.jpg`
-- **Recommended size**: 600x400px
-- **Format**: JPG
-- **Usage**: Shows in the "About Us" section
-- **Tip**: Interior shot of your workshop or team at work
-
-### 4. Project Gallery Images
-Add 6 project images with these names:
-- `images/project-1.jpg` - Custom Gate Project
-- `images/project-2.jpg` - Staircase Railing
-- `images/project-3.jpg` - Industrial Structure
-- `images/project-4.jpg` - Window Grills
-- `images/project-5.jpg` - Balcony Railing
-- `images/project-6.jpg` - Custom Fabrication
-
-**Recommended specs for project images:**
-- **Size**: 800x600px
-- **Format**: JPG
-- **Quality**: High quality but compressed for web
-
-## Image Optimization Tips
-
-### 1. Compress Images
-Use tools like:
-- **Online**: TinyPNG, Squoosh.app
-- **Software**: Photoshop, GIMP
-- **Target**: Keep file sizes under 500KB each
-
-### 2. Recommended Formats
-- **Logo**: PNG (supports transparency)
-- **Photos**: JPG (better compression for photos)
-- **Modern option**: WebP (smaller file sizes, good browser support)
-
-### 3. Image Dimensions
 ```
-Logo: 200x80px (2.5:1 ratio)
-Hero: 1920x1080px (16:9 ratio)
-Workshop: 600x400px (3:2 ratio)
-Projects: 800x600px (4:3 ratio)
+images/
+├── logo.png            # Logo in the header, thank-you, privacy and 404 pages (144 × 144 px PNG)
+├── 2025-04-09.webp     # Workshop photo in the home page "About" section
+├── gates/              # gates-01.webp ... gates-14.webp     → gates.html
+├── railings/           # railings-01.webp ... railings-03.webp → railings.html
+├── sheds/              # sheds-01.webp ... sheds-14.webp     → sheds-structures.html
+├── office/             # office-01.webp ... office-03.webp   → office-partitions.html
+└── custom/             # custom-01.webp ... custom-07.webp   → custom-fabrication.html
 ```
 
-## Adding Your Images
+Photos are numbered in the order they appear in that page's gallery. The office page also reuses two photos from
+`custom/` (the jali partition and the display shelving).
 
-### Method 1: Direct Upload
-1. Create the `images` folder in your project root
-2. Add your images with the exact names listed above
-3. Deploy to Netlify
+## Special photos
 
-### Method 2: Using Netlify Dashboard
-1. Go to your Netlify site dashboard
-2. Click "Site settings" → "Asset optimization"
-3. Upload images directly through the file manager
+Some photos are used in more than one place. If you replace one of these, check each place it appears.
 
-## Fallback Behavior
+| Photo | Used for |
+|---|---|
+| `gates/gates-01.webp` | Home page banner, gates page banner, link-preview image when the site is shared on WhatsApp or Facebook |
+| `railings/railings-01.webp` | Railings page banner, home page "Railings" card |
+| `sheds/sheds-01.webp` | Sheds page banner |
+| `sheds/sheds-02.webp` | Home page "Truss Work, Sheds & Structures" card |
+| `office/office-01.webp` | Office page banner, home page "Office Partitions" card and photo tile |
+| `custom/custom-01.webp` | Custom page banner, home page "Custom Fabrication" card |
 
-The website includes automatic fallbacks:
-- If logo fails to load: Shows text-only company name
-- If project images fail: Shows gray placeholder with project name
-- If workshop image fails: Shows placeholder box
+The home page "Our Work" section shows 8 photos picked from the service folders. Each one links to its service page.
 
-## File Structure
-```
-your-project/
-├── images/
-│   ├── logo.png
-│   ├── hero-bg.jpg
-│   ├── workshop.jpg
-│   ├── project-1.jpg
-│   ├── project-2.jpg
-│   ├── project-3.jpg
-│   ├── project-4.jpg
-│   ├── project-5.jpg
-│   └── project-6.jpg
-├── index.html
-├── netlify.toml
-└── README.md
-```
+## Adding a photo to a service page
 
-## Testing Your Images
+1. **Prepare the photo.**
+   - Format: **WebP** (smallest files). JPG also works.
+   - Size: about 1,000–1,400 px on the longest side.
+   - File size: aim for under 200 KB. [Squoosh](https://squoosh.app) can convert to WebP and compress.
+   - Content: the finished work, in good light, without people, clutter or watermarks in the way.
+2. **Name it** with the next number in that folder, for example `images/railings/railings-04.webp`.
+3. **Add it to the page's gallery.** Open the service page, find the `work-grid` section under "Our recent work",
+   and copy an existing line, changing the file name and description in both places:
 
-1. **Local Testing**: Open `index.html` in your browser
-2. **Check Loading**: Ensure all images load properly
-3. **Mobile Test**: Test on mobile devices or browser dev tools
-4. **Performance**: Check loading speed
+   ```html
+   <a href="images/railings/railings-04.webp" data-caption="SS balcony railing with glass panels"><img src="images/railings/railings-04.webp" alt="SS balcony railing with glass panels" loading="lazy" width="400" height="300"></a>
+   ```
 
-## Troubleshooting
+   - `href` and `src`: the photo's path.
+   - `data-caption` and `alt`: a short, factual description, for example "Black MS sliding main gate with vertical bars".
+     It is shown under the enlarged photo, read out by screen readers, and helps Google understand the image.
 
-### Images Not Showing?
-1. Check file names match exactly (case-sensitive)
-2. Verify images are in the `images/` folder
-3. Check file formats (JPG/PNG)
-4. Ensure files aren't corrupted
+Tapping a gallery photo opens it enlarged; visitors can swipe or use the arrow keys to move through the gallery.
 
-### Slow Loading?
-1. Compress images further
-2. Consider WebP format
-3. Check file sizes (aim for <500KB each)
+## Replacing a page banner
 
-### Logo Issues?
-1. Ensure transparent background for PNG
-2. Check dimensions aren't too large
-3. Verify contrast against header background
+The banner photo is set in the page's `page-hero` section (service pages) or in `css/site.css` under `.hero`
+(home page). Wide (landscape) photos work best. The banner has a dark overlay so the white text stays readable.
 
-## Pro Tips
+If you change the home page banner, also update the `preload` link and the `og:image` link-preview tag in the
+`<head>` of `index.html`.
 
-1. **Consistent Style**: Use similar lighting/style for project images
-2. **High Quality**: Use your best work for the gallery
-3. **Mobile First**: Test how images look on mobile devices
-4. **SEO**: Use descriptive file names (e.g., `stainless-steel-gate.jpg`)
-5. **Backup**: Keep original high-res versions for future use
+## Checking your changes
+
+1. Preview the site locally (see README.md) and open the page you changed.
+2. Check the photo shows in the gallery and enlarges when tapped.
+3. Check on a phone-sized screen (in Chrome: right-click → Inspect → device toolbar).
