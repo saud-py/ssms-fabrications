@@ -49,7 +49,7 @@ def apply_config_to_html(config):
         content = re.sub(r'123 Fabrication Street, Industrial Area, City, State 12345', contact['address'], content)
     
     if contact.get('phone'):
-        content = re.sub(r'\+91 98765 43210', contact['phone'], content)
+        content = re.sub(r'\+91 9481347471', contact['phone'], content)
     
     if contact.get('email'):
         content = re.sub(r'contact@ssmsfab\.com', contact['email'], content)

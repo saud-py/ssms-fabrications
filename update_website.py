@@ -61,7 +61,7 @@ class WebsiteUpdater:
         # Update phone
         if contact_data.get('phone'):
             content = re.sub(
-                r'\+91 98765 43210',
+                r'\+91 9481347471',
                 contact_data['phone'],
                 content
             )
