@@ -168,6 +168,14 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', function() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
+        // Only hide the header on phones (they have the bottom call bar). On tablets and
+        // desktops the header carries the phone number, so it stays visible.
+        if (window.innerWidth >= 768) {
+            header.style.transform = 'translateY(0)';
+            lastScrollTop = scrollTop;
+            return;
+        }
+
         if (scrollTop > lastScrollTop && scrollTop > 100) {
             // Scrolling down
             header.style.transform = 'translateY(-100%)';

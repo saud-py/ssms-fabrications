@@ -567,3 +567,29 @@ a.service-card .more { display: inline-block; margin-top: 0.75rem; color: #2563e
 .area-chips li { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 999px; padding: 0.35rem 0.9rem; font-size: 0.9rem; color: #374151; }
 @media (min-width: 1024px) { .services-grid { grid-template-columns: repeat(3, 1fr); } }
 .section-head .stars { color: #f59e0b; letter-spacing: 0.1em; }
+
+/* Call is the main action: solid green hero button + phone number in the header */
+.btn-call { background: #16a34a; }
+.btn-call:hover { background: #15803d; }
+
+.nav-phone { display: none; }
+@media (min-width: 768px) {
+    .nav-phone {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        margin-left: auto;
+        margin-right: 1rem;
+        padding: 0.5rem 0.9rem;
+        border-radius: 0.375rem;
+        background: #16a34a;
+        color: #ffffff;
+        font-weight: 700;
+        text-decoration: none;
+        white-space: nowrap;
+    }
+    .nav-phone:hover { background: #15803d; }
+}
+@media (min-width: 1024px) {
+    .nav-phone { margin-left: 1.25rem; margin-right: 0; }
+}
